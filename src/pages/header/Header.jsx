@@ -12,7 +12,7 @@ import {
 } from '@mui/material'
 import MenuIcon from '@mui/icons-material/Menu'
 import { Link, NavLink } from 'react-router-dom'
-import logo from '../../assets/AviarLogo.png'
+import logo from '../../assets/AviarLogoNew.jpg'
 
 const Header = () => {
   const [open, setOpen] = useState(false)
@@ -39,7 +39,7 @@ const Header = () => {
         >
           {/* Logo */}
           <Box>
-            <img src={logo} alt="logo" width={180} />
+            <img src={logo} alt="logo" width={200} />
           </Box>
 
           {/* Desktop Menu */}

@@ -7,7 +7,7 @@ const Footer = () => {
     return (
         <Box sx={{ bgcolor: '#203a43', color: 'white', py: 8, }}>
             <Container maxWidth="lg">
-                <Grid container spacing={4}>
+                <Grid justifyContent={'center'} container spacing={4}>
 
                     {/* Quick Links */}
                     <Grid item xs={12} sm={4}>
@@ -18,11 +18,20 @@ const Footer = () => {
                             <Link component={RouterLink} to="/" color="inherit" underline="hover" sx={{ my: 0.5 }}>
                                 Home
                             </Link>
-                            <Link component={RouterLink} to="/about" color="inherit" underline="hover" sx={{ my: 0.5 }}>
-                                About Us
+                            <Link component={RouterLink} to="/products" color="inherit" underline="hover" sx={{ my: 0.5 }}>
+                                Products
                             </Link>
-                            <Link component={RouterLink} to="/services" color="inherit" underline="hover" sx={{ my: 0.5 }}>
-                                Services
+                            <Link component={RouterLink} to="/solutions" color="inherit" underline="hover" sx={{ my: 0.5 }}>
+                                Solutions
+                            </Link>
+                            <Link component={RouterLink} to="/delivery-model" color="inherit" underline="hover" sx={{ my: 0.5 }}>
+                                Delivery Model
+                            </Link>
+                            <Link component={RouterLink} to="/about-us" color="inherit" underline="hover" sx={{ my: 0.5 }}>
+                                About AVIAR
+                            </Link>
+                            <Link component={RouterLink} to="/careers" color="inherit" underline="hover" sx={{ my: 0.5 }}>
+                                Careers
                             </Link>
                             <Link component={RouterLink} to="/contact" color="inherit" underline="hover" sx={{ my: 0.5 }}>
                                 Contact Us
@@ -36,8 +45,8 @@ const Footer = () => {
                             Contact Info
                         </Typography>
                         <Typography>Email: aviar@aviartechservices.com</Typography>
-                        <Typography>Phone: +91 98765 43210</Typography>
-                        <Typography>Phone: +91 98765 43210</Typography>
+                        <Typography>Phone: +91 86680 65758</Typography>
+                        {/* <Typography>Phone: +91 98765 43210</Typography> */}
 
                         {/* <Typography>Fax: +91 12345 67890</Typography> */}
                     </Grid>

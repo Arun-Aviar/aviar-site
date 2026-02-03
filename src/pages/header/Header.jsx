@@ -21,7 +21,7 @@ const Header = () => {
     { label: 'Home', path: '/' },
     { label: 'Products', path: '/products' },
     { label: 'Solutions', path: '/solutions' },
-    { label: 'Projects', path: '/projects' },
+    // { label: 'Projects', path: '/projects' },
     { label: 'Delivery Model', path: '/delivery-model' },
     { label: 'About AVIAR', path: '/about-us' },
     { label: 'Careers', path: '/careers' },

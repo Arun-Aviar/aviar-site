@@ -8,6 +8,7 @@ import DeliveryModel from './pages/DeliveryModel.jsx'
 import AboutUs from './pages/AboutUs.jsx'
 import Careers from './pages/Careers.jsx'
 import ContactUs from './pages/ContactUs.jsx'
+import Solutions from './pages/Solutions.jsx'
 
 const Router = () => {
     return (
@@ -17,6 +18,7 @@ const Router = () => {
                 <Route path="/" element={<Home />} />
                 <Route path="/products" element={<Products />} />
                 <Route path="/delivery-model" element={<DeliveryModel />} />
+                <Route path="/solutions" element={<Solutions />} /> 
                 <Route path="/about-us" element={<AboutUs />} />
                 <Route path="/careers" element={<Careers />} />
                 <Route path="/contact" element={<ContactUs />} />

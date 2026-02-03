@@ -9,6 +9,7 @@ import {
 } from '@mui/material'
 import { motion } from 'framer-motion'
 import WhatWeDo from './subs/WhatWeDo'
+import { Link } from 'react-router-dom'
 
 const MotionBox = motion(Box)
 
@@ -53,7 +54,9 @@ const Home = () => {
           <Button
             variant="contained"
             color="secondary"
+            component={Link}
             size="large"
+            to={'/contact'}
             sx={{
               px: 4,
               py: 1.5,

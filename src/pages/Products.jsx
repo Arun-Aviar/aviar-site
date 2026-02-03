@@ -135,8 +135,8 @@ const ProductCard = ({ name, desc, tags, icon, index, type }) => {
           inset: 0,
           padding: '1px',
           background: isMobile
-            ? 'linear-gradient(135deg, #4facfe, #00f2fe)'
-            : 'linear-gradient(135deg, #43e97b, #38f9d7)',
+            ? 'linear-gradient(135deg, #3991deff, #0378edff)'
+            : 'linear-gradient(135deg, #3a94e2ff, #0075eaff)',
           WebkitMask: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
           WebkitMaskComposite: 'xor',
           maskComposite: 'exclude',
@@ -184,9 +184,9 @@ const ProductCard = ({ name, desc, tags, icon, index, type }) => {
           sx={{
             mb: 3,
             background: isMobile
-              ? 'linear-gradient(135deg, #4facfe, #00f2fe)'
-              : 'linear-gradient(135deg, #43e97b, #38f9d7)',
-            color: 'white',
+              ? 'linear-gradient(135deg, #4facfe, #00aefeff)'
+              : 'linear-gradient(135deg, #43b7e9ff, #38ccf9ff)',
+            color: 'black',
             fontWeight: 600,
             '& .MuiChip-icon': {
               color: 'white'
@@ -201,8 +201,8 @@ const ProductCard = ({ name, desc, tags, icon, index, type }) => {
           gutterBottom
           sx={{
             background: isMobile
-              ? 'linear-gradient(135deg, #4facfe, #00f2fe)'
-              : 'linear-gradient(135deg, #43e97b, #38f9d7)',
+              ? 'linear-gradient(135deg, #4facfe, #0083feff)'
+              : 'linear-gradient(135deg, #43c8e9ff, #389cf9ff)',
             WebkitBackgroundClip: 'text',
             WebkitTextFillColor: 'transparent',
             backgroundClip: 'text',
@@ -234,7 +234,7 @@ const ProductCard = ({ name, desc, tags, icon, index, type }) => {
               variant="outlined"
               sx={{
                 borderColor: isMobile ? '#4facfe40' : '#43e97b40',
-                color: isMobile ? '#4facfe' : '#43e97b',
+                color: isMobile ? '#4facfe' : '#43bde9ff',
                 fontWeight: 500,
                 fontSize: '0.75rem'
               }}
@@ -346,7 +346,7 @@ const Products = () => {
               width: 4, 
               height: 40, 
               mr: 3,
-              background: 'linear-gradient(135deg, #4facfe, #00f2fe)',
+              background: 'linear-gradient(135deg, #53a2e7ff, #246df4ff)',
               borderRadius: 2
             }} />
             <Typography variant="h3" fontWeight="800">

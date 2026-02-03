@@ -1,7 +1,7 @@
 import React from 'react'
 import { Container, Typography, Box, Grid, Paper, Button, Chip, Stack, Avatar, Card, CardContent } from '@mui/material'
 import { motion } from 'framer-motion'
-import { 
+import {
   RocketLaunch,
   Groups,
   School,
@@ -20,19 +20,20 @@ import {
   People,
   Lightbulb
 } from '@mui/icons-material'
+import { Link } from 'react-router-dom'
 
 const MotionBox = motion(Box)
 const MotionPaper = motion(Paper)
 
 const AboutUs = () => {
   return (
-    <Box sx={{ 
+    <Box sx={{
       py: { xs: 8, md: 12 },
       background: 'linear-gradient(135deg, #ffffff 0%, #f8fafc 100%)',
       position: 'relative',
       overflow: 'hidden'
     }}>
-      
+
       {/* Background Elements */}
       <Box
         sx={{
@@ -58,14 +59,14 @@ const AboutUs = () => {
       />
 
       <Container maxWidth="lg">
-        
+
         {/* Hero Header */}
         <MotionBox
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          sx={{ 
-            textAlign: 'center', 
+          sx={{
+            textAlign: 'center',
             mb: 10,
             position: 'relative',
             zIndex: 1
@@ -86,8 +87,8 @@ const AboutUs = () => {
             }}>
               A
             </Box> */}
-            <Typography 
-              variant="h1" 
+            <Typography
+              variant="h1"
               sx={{
                 fontSize: { xs: '2.5rem', md: '4rem' },
                 fontWeight: 900,
@@ -100,7 +101,7 @@ const AboutUs = () => {
               AVIAR Technology Services
             </Typography>
           </Stack>
-          
+
           {/* <Typography
             variant="h4"
             color="text.secondary"
@@ -114,10 +115,10 @@ const AboutUs = () => {
           >
             Technology Services
           </Typography> */}
-          
-          <Chip 
-            label="SINCE 2015" 
-            sx={{ 
+
+          <Chip
+            label="SINCE 2015"
+            sx={{
               background: 'linear-gradient(135deg, #3b82f6, #1d4ed8)',
               color: 'white',
               fontWeight: 700,
@@ -151,10 +152,10 @@ const AboutUs = () => {
                 >
                   <RocketLaunch sx={{ fontSize: 60, color: 'white' }} />
                 </Box>
-                
-                <Typography 
-                  variant="h2" 
-                  sx={{ 
+
+                <Typography
+                  variant="h2"
+                  sx={{
                     mb: 3,
                     fontSize: { xs: '2rem', md: '2.75rem' },
                     fontWeight: 800,
@@ -166,16 +167,16 @@ const AboutUs = () => {
                 >
                   Who We Are
                 </Typography>
-                
+
                 <Typography variant="h6" color="text.secondary" sx={{ mb: 4, lineHeight: 1.7 }}>
-                  Founded in 2015 and headquartered in Bloomington, Illinois, AVIAR Technology Services 
-                  is a global technology firm focused on building and delivering digital products and 
+                  Founded in 2015 and headquartered in Bloomington, Illinois, AVIAR Technology Services
+                  is a global technology firm focused on building and delivering digital products and
                   enterprise platforms that transform businesses.
                 </Typography>
-                
-                <Box sx={{ 
-                  p: 4, 
-                  borderRadius: 3, 
+
+                <Box sx={{
+                  p: 4,
+                  borderRadius: 3,
                   background: 'linear-gradient(135deg, rgba(59, 130, 246, 0.05), rgba(30, 58, 138, 0.05))',
                   border: '1px solid rgba(59, 130, 246, 0.15)'
                 }}>
@@ -183,13 +184,13 @@ const AboutUs = () => {
                     Our Focus
                   </Typography>
                   <Typography color="text.secondary">
-                    Execution, reliability, and long-term partnership — delivering solutions that 
+                    Execution, reliability, and long-term partnership — delivering solutions that
                     drive measurable business value.
                   </Typography>
                 </Box>
               </Box>
             </Grid>
-            
+
             <Grid item xs={12} md={6}>
               <MotionPaper
                 whileHover={{ y: -8, boxShadow: '0 25px 50px rgba(30, 58, 138, 0.15)' }}
@@ -204,7 +205,7 @@ const AboutUs = () => {
                 <Typography variant="h5" fontWeight="800" gutterBottom sx={{ color: '#1d4ed8', mb: 4 }}>
                   We Bring Together
                 </Typography>
-                
+
                 <Stack spacing={4}>
                   {[
                     {
@@ -255,18 +256,18 @@ const AboutUs = () => {
         </MotionBox>
 
 
-         {/* Values Section */}
+        {/* Values Section */}
         <MotionBox
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           sx={{ mb: 8 }}
         >
-          <Typography 
-            variant="h2" 
-            sx={{ 
+          <Typography
+            variant="h2"
+            sx={{
               textAlign: 'center',
-              mb: 8,
+              mt: 8,
               fontSize: { xs: '2rem', md: '2.75rem' },
               fontWeight: 800,
               background: 'linear-gradient(135deg, #1e3a8a 0%, #8b5cf6 100%)',
@@ -277,7 +278,7 @@ const AboutUs = () => {
           >
             Our Core Values
           </Typography>
-          
+
           <Grid container spacing={4}>
             {[
               {
@@ -305,7 +306,7 @@ const AboutUs = () => {
                 color: '#f59e0b'
               }
             ].map((value, index) => (
-              <Grid item xs={12} sm={6} md={3} key={index}>
+              <Grid item xs={12} sm={6} md={3} key={index} mt={10}>
                 <MotionPaper
                   whileHover={{ y: -12, scale: 1.02 }}
                   sx={{
@@ -342,7 +343,7 @@ const AboutUs = () => {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true, margin: "-100px" }}
-          sx={{ mb: 12 }}
+          sx={{ mb: 12, mt: 20 }}
         >
           <Paper
             sx={{
@@ -365,14 +366,14 @@ const AboutUs = () => {
                 background: 'radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%)'
               }}
             />
-            
+
             <Box sx={{ position: 'relative', zIndex: 1 }}>
               <Box sx={{ display: 'flex', alignItems: 'center', mb: 4 }}>
                 <School sx={{ fontSize: 48, mr: 3 }} />
                 <Box>
-                  <Chip 
-                    label="TALENT INITIATIVE" 
-                    sx={{ 
+                  <Chip
+                    label="TALENT INITIATIVE"
+                    sx={{
                       background: 'rgba(255,255,255,0.2)',
                       color: 'white',
                       fontWeight: 700,
@@ -384,16 +385,16 @@ const AboutUs = () => {
                   </Typography>
                 </Box>
               </Box>
-              
+
               <Typography variant="h5" sx={{ mb: 6, opacity: 0.9, maxWidth: 800 }}>
-                Operating a 100-seat development and training center in Tiruvannamalai, India, 
+                Operating a 100-seat development and training center in Tiruvannamalai, India,
                 strengthening our engineering pipeline while supporting local communities.
               </Typography>
-              
+
               <Grid container spacing={4}>
                 <Grid item xs={12} md={6}>
-                  <Card sx={{ 
-                    background: 'rgba(255,255,255,0.1)', 
+                  <Card sx={{
+                    background: 'rgba(255,255,255,0.1)',
                     backdropFilter: 'blur(10px)',
                     border: '1px solid rgba(255,255,255,0.2)'
                   }}>
@@ -404,7 +405,7 @@ const AboutUs = () => {
                           Talent Development
                         </Typography>
                       </Box>
-                      
+
                       <Stack spacing={2}>
                         {[
                           'Enterprise Software Development',
@@ -422,10 +423,10 @@ const AboutUs = () => {
                     </CardContent>
                   </Card>
                 </Grid>
-                
+
                 <Grid item xs={12} md={6}>
-                  <Card sx={{ 
-                    background: 'rgba(255,255,255,0.1)', 
+                  <Card sx={{
+                    background: 'rgba(255,255,255,0.1)',
                     backdropFilter: 'blur(10px)',
                     border: '1px solid rgba(255,255,255,0.2)'
                   }}>
@@ -436,15 +437,15 @@ const AboutUs = () => {
                           Placement Network
                         </Typography>
                       </Box>
-                      
+
                       <Typography sx={{ mb: 3, opacity: 0.9 }}>
                         Through industry connections, we support placement opportunities with:
                       </Typography>
-                      
+
                       <Grid container spacing={2}>
                         {[
                           'Accenture',
-                          'Cognizant', 
+                          'Cognizant',
                           'Infosys',
                           'Tech Mahindra',
                           'Wipro',
@@ -472,7 +473,7 @@ const AboutUs = () => {
           </Paper>
         </MotionBox>
 
-       
+
 
 
         {/* CTA Section */}
@@ -502,21 +503,23 @@ const AboutUs = () => {
                 background: 'radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%)'
               }}
             />
-            
+
             <Box sx={{ position: 'relative', zIndex: 1 }}>
               <Typography variant="h2" fontWeight="800" gutterBottom>
                 Ready to Build With Us?
               </Typography>
-              
+
               <Typography variant="h5" sx={{ mb: 5, opacity: 0.9, maxWidth: 600, mx: 'auto' }}>
-                Whether you're looking for a technology partner or a place to grow your career, 
+                Whether you're looking for a technology partner or a place to grow your career,
                 let's create something remarkable together.
               </Typography>
-              
+
               <Stack direction={{ xs: 'column', sm: 'row' }} spacing={3} justifyContent="center">
                 <Button
                   variant="contained"
+                  component={Link}
                   size="large"
+                  to={'/contact'}
                   sx={{
                     py: 2,
                     px: 6,
@@ -533,8 +536,8 @@ const AboutUs = () => {
                 >
                   Partner With Us
                 </Button>
-                
-                <Button
+
+                {/* <Button
                   variant="outlined"
                   size="large"
                   sx={{
@@ -552,7 +555,7 @@ const AboutUs = () => {
                   }}
                 >
                   View Open Positions
-                </Button>
+                </Button> */}
               </Stack>
             </Box>
           </Paper>

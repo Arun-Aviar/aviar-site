@@ -1,10 +1,10 @@
 import React from 'react'
 import { Container, Typography, Box, Grid, Paper, Button, Chip, Stack, Divider, List, ListItem, ListItemIcon, ListItemText } from '@mui/material'
 import { motion } from 'framer-motion'
-import { 
-  CheckCircle, 
-  Security, 
-  Groups, 
+import {
+  CheckCircle,
+  Security,
+  Groups,
   RocketLaunch,
   Timeline,
   Savings,
@@ -21,19 +21,20 @@ import {
   AccountBalance,
   TrendingUp
 } from '@mui/icons-material'
+import { Link } from 'react-router-dom'
 
 const MotionBox = motion(Box)
 const MotionPaper = motion(Paper)
 
 const DeliveryModel = () => {
   return (
-    <Box sx={{ 
+    <Box sx={{
       py: { xs: 8, md: 12 },
       background: 'linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%)',
       position: 'relative',
       overflow: 'hidden'
     }}>
-      
+
       {/* Background Elements */}
       <Box
         sx={{
@@ -59,23 +60,23 @@ const DeliveryModel = () => {
       />
 
       <Container maxWidth="lg">
-        
+
         {/* Hero Section */}
         <MotionBox
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          sx={{ 
-            textAlign: 'center', 
+          sx={{
+            textAlign: 'center',
             mb: 10,
             position: 'relative',
             zIndex: 1
           }}
         >
-          <Chip 
-            label="OUR COMPETITIVE EDGE" 
+          <Chip
+            label="OUR COMPETITIVE EDGE"
             icon={<Flag />}
-            sx={{ 
+            sx={{
               mb: 3,
               px: 3,
               py: 1,
@@ -87,9 +88,9 @@ const DeliveryModel = () => {
               '& .MuiChip-icon': { color: 'white' }
             }}
           />
-          
-          <Typography 
-            variant="h1" 
+
+          <Typography
+            variant="h1"
             sx={{
               fontSize: { xs: '2.5rem', md: '3.75rem' },
               fontWeight: 900,
@@ -103,18 +104,18 @@ const DeliveryModel = () => {
           >
             Global Delivery. Enterprise Control.
           </Typography>
-          
+
           <Typography
             variant="h5"
             color="text.secondary"
-            sx={{ 
-              maxWidth: 800, 
+            sx={{
+              maxWidth: 800,
               mx: 'auto',
               fontWeight: 400,
               lineHeight: 1.6
             }}
           >
-            The hybrid delivery model that combines US-based governance with India's technical 
+            The hybrid delivery model that combines US-based governance with India's technical
             excellence — delivering enterprise-grade solutions with optimal cost efficiency.
           </Typography>
         </MotionBox>
@@ -127,7 +128,7 @@ const DeliveryModel = () => {
           sx={{ mb: 12 }}
         >
           <Grid container spacing={6}>
-            
+
             {/* US Column */}
             <Grid item xs={12} md={6}>
               <MotionPaper
@@ -154,7 +155,7 @@ const DeliveryModel = () => {
                 >
                   🇺🇸
                 </Box>
-                
+
                 <Box sx={{ display: 'flex', alignItems: 'center', mb: 4 }}>
                   <Box sx={{
                     width: 8,
@@ -167,11 +168,11 @@ const DeliveryModel = () => {
                     United States
                   </Typography>
                 </Box>
-                
+
                 <Typography variant="h6" color="text.secondary" sx={{ mb: 4 }}>
                   Strategic Leadership & Client Governance
                 </Typography>
-                
+
                 <List sx={{ '& .MuiListItem-root': { py: 2 } }}>
                   {[
                     { icon: <Handshake />, text: 'Client Engagement & Strategic Governance' },
@@ -195,9 +196,9 @@ const DeliveryModel = () => {
                           {item.icon}
                         </Box>
                       </ListItemIcon>
-                      <ListItemText 
+                      <ListItemText
                         primary={item.text}
-                        primaryTypographyProps={{ 
+                        primaryTypographyProps={{
                           fontWeight: 600,
                           fontSize: '1.05rem'
                         }}
@@ -207,7 +208,7 @@ const DeliveryModel = () => {
                 </List>
               </MotionPaper>
             </Grid>
-            
+
             {/* India Column */}
             <Grid item xs={12} md={6}>
               <MotionPaper
@@ -234,7 +235,7 @@ const DeliveryModel = () => {
                 >
                   🇮🇳
                 </Box>
-                
+
                 <Box sx={{ display: 'flex', alignItems: 'center', mb: 4 }}>
                   <Box sx={{
                     width: 8,
@@ -247,21 +248,21 @@ const DeliveryModel = () => {
                     India Development Center
                   </Typography>
                 </Box>
-                
-                <Chip 
-                  label="100-Seat Capacity" 
-                  sx={{ 
+
+                <Chip
+                  label="100-Seat Capacity"
+                  sx={{
                     mb: 3,
                     background: 'linear-gradient(135deg, #10b981, #059669)',
                     color: 'white',
                     fontWeight: 700
                   }}
                 />
-                
+
                 <Typography variant="h6" color="text.secondary" sx={{ mb: 4 }}>
                   Technical Excellence & Scalable Execution
                 </Typography>
-                
+
                 <List sx={{ '& .MuiListItem-root': { py: 2 } }}>
                   {[
                     { icon: <PrecisionManufacturing />, text: 'Full-Cycle Development Teams' },
@@ -285,9 +286,9 @@ const DeliveryModel = () => {
                           {item.icon}
                         </Box>
                       </ListItemIcon>
-                      <ListItemText 
+                      <ListItemText
                         primary={item.text}
-                        primaryTypographyProps={{ 
+                        primaryTypographyProps={{
                           fontWeight: 600,
                           fontSize: '1.05rem'
                         }}
@@ -307,11 +308,11 @@ const DeliveryModel = () => {
           viewport={{ once: true }}
           sx={{ mb: 12 }}
         >
-          <Typography 
-            variant="h2" 
-            sx={{ 
+          <Typography
+            variant="h2"
+            sx={{
               textAlign: 'center',
-              mb: 8,
+              mt: 10,
               fontSize: { xs: '2rem', md: '2.5rem' },
               fontWeight: 800,
               background: 'linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%)',
@@ -322,7 +323,7 @@ const DeliveryModel = () => {
           >
             Why This Works
           </Typography>
-          
+
           <Grid container spacing={4}>
             {[
               {
@@ -344,7 +345,7 @@ const DeliveryModel = () => {
                 gradient: 'linear-gradient(135deg, #8b5cf6, #7c3aed)'
               }
             ].map((benefit, index) => (
-              <Grid item xs={12} md={4} key={index}>
+              <Grid item xs={12} md={4} key={index} mt={10}>
                 <MotionBox
                   whileHover={{ scale: 1.03 }}
                   sx={{
@@ -366,7 +367,7 @@ const DeliveryModel = () => {
                     alignItems: 'center',
                     justifyContent: 'center',
                     mx: 'auto',
-                    mb: 3,
+                    mb: 1,
                     color: 'white',
                     fontSize: '2rem'
                   }}>
@@ -412,7 +413,7 @@ const DeliveryModel = () => {
                 background: 'radial-gradient(circle, rgba(255,255,255,0.05) 0%, transparent 70%)'
               }}
             />
-            
+
             <Box sx={{ position: 'relative', zIndex: 1 }}>
               <Box sx={{ display: 'flex', alignItems: 'center', mb: 4 }}>
                 <Security sx={{ fontSize: 40, mr: 2, color: '#60a5fa' }} />
@@ -420,11 +421,11 @@ const DeliveryModel = () => {
                   Security, Governance & Risk Management
                 </Typography>
               </Box>
-              
+
               <Typography variant="h6" sx={{ color: '#cbd5e1', mb: 5, maxWidth: 800 }}>
                 Built for Enterprise Expectations with Governance-First Delivery
               </Typography>
-              
+
               <Grid container spacing={4}>
                 <Grid item xs={12} md={6}>
                   <Stack spacing={3}>
@@ -443,7 +444,7 @@ const DeliveryModel = () => {
                     ))}
                   </Stack>
                 </Grid>
-                
+
                 <Grid item xs={12} md={6}>
                   <Box sx={{
                     p: 4,
@@ -483,9 +484,9 @@ const DeliveryModel = () => {
           viewport={{ once: true }}
           sx={{ mb: 8 }}
         >
-          <Typography 
-            variant="h2" 
-            sx={{ 
+          <Typography
+            variant="h2"
+            sx={{
               textAlign: 'center',
               mb: 8,
               fontSize: { xs: '2rem', md: '2.5rem' },
@@ -498,7 +499,7 @@ const DeliveryModel = () => {
           >
             Proven Results
           </Typography>
-          
+
           <Grid container spacing={4}>
             <Grid item xs={12}>
               <MotionPaper
@@ -513,9 +514,9 @@ const DeliveryModel = () => {
                 <Box sx={{ display: 'flex', alignItems: 'center', mb: 4 }}>
                   <AccountBalance sx={{ fontSize: 40, mr: 3, color: '#1d4ed8' }} />
                   <Box>
-                    <Chip 
-                      label="MID-MARKET ENTERPRISE" 
-                      sx={{ 
+                    <Chip
+                      label="MID-MARKET ENTERPRISE"
+                      sx={{
                         background: '#1d4ed8',
                         color: 'white',
                         fontWeight: 700,
@@ -527,12 +528,12 @@ const DeliveryModel = () => {
                     </Typography>
                   </Box>
                 </Box>
-                
+
                 <Grid container spacing={4}>
                   <Grid item xs={12} md={4}>
-                    <Box sx={{ 
-                      p: 3, 
-                      borderRadius: 3, 
+                    <Box sx={{
+                      p: 3,
+                      borderRadius: 3,
                       background: '#fef2f2',
                       borderLeft: '4px solid #dc2626'
                     }}>
@@ -544,11 +545,11 @@ const DeliveryModel = () => {
                       </Typography>
                     </Box>
                   </Grid>
-                  
+
                   <Grid item xs={12} md={4}>
-                    <Box sx={{ 
-                      p: 3, 
-                      borderRadius: 3, 
+                    <Box sx={{
+                      p: 3,
+                      borderRadius: 3,
                       background: '#f0f9ff',
                       borderLeft: '4px solid #0ea5e9'
                     }}>
@@ -560,11 +561,11 @@ const DeliveryModel = () => {
                       </Typography>
                     </Box>
                   </Grid>
-                  
+
                   <Grid item xs={12} md={4}>
-                    <Box sx={{ 
-                      p: 3, 
-                      borderRadius: 3, 
+                    <Box sx={{
+                      p: 3,
+                      borderRadius: 3,
                       background: '#f0fdf4',
                       borderLeft: '4px solid #10b981'
                     }}>
@@ -609,18 +610,18 @@ const DeliveryModel = () => {
                 background: 'radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%)'
               }}
             />
-            
+
             <Box sx={{ position: 'relative', zIndex: 1 }}>
               <Typography variant="h3" fontWeight="800" gutterBottom>
                 Ready to Transform Your Delivery?
               </Typography>
-              
+
               <Typography variant="h6" sx={{ mb: 5, opacity: 0.9, maxWidth: 600, mx: 'auto' }}>
                 Discover how our global delivery model can optimize your costs and accelerate your projects
               </Typography>
-              
+
               <Stack direction={{ xs: 'column', sm: 'row' }} spacing={3} justifyContent="center">
-                <Button
+                {/* <Button
                   variant="contained"
                   size="large"
                   sx={{
@@ -638,11 +639,13 @@ const DeliveryModel = () => {
                   }}
                 >
                   Request Detailed Case Studies
-                </Button>
-                
+                </Button> */}
+
                 <Button
                   variant="outlined"
+                  component={Link}
                   size="large"
+                  to={'/contact'}
                   sx={{
                     py: 2,
                     px: 6,

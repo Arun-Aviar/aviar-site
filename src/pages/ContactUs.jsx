@@ -85,15 +85,15 @@ const ContactUs = () => {
       title: 'United States Headquarters',
       address: 'Bloomington, Illinois',
       phone: '+1 (555) 123-4567',
-      email: 'usa@aviar.tech',
+      email: 'aviar@aviartechservices.com',
       icon: <Place />,
       color: '#3b82f6'
     },
     {
       title: 'India Development Center',
       address: 'Tiruvannamalai, Tamil Nadu',
-      phone: '+91 98765 43210',
-      email: 'india@aviar.tech',
+      phone: '+91 86680 65758',
+      email: 'aviar@aviartechservices.com',
       icon: <Business />,
       color: '#10b981'
     },
@@ -654,14 +654,14 @@ const ContactUs = () => {
                   Our Locations
                 </Typography>
 
-                <Stack flexDirection={'row'} spacing={3}>
+                <Stack flexDirection={'row'} >
                   {contactPoints.map((point, index) => (
                     <MotionCard
                       key={index}
-
                       whileHover={{ y: -5, boxShadow: '0 15px 30px rgba(0,0,0,0.1)' }}
                       sx={{
                         borderRadius: 3,
+                        ml:5,
                         overflow: 'hidden',
                         border: '1px solid rgba(0,0,0,0.05)',
                         background: 'white',
@@ -880,128 +880,7 @@ const ContactUs = () => {
           </Grid>
         </Grid>
 
-        {/* Map Placeholder */}
-        <MotionBox
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          sx={{ mt: 10 }}
-        >
-          <Paper
-            sx={{
-              p: 4,
-              borderRadius: 4,
-              background: 'linear-gradient(135deg, #1e293b 0%, #0f172a 100%)',
-              color: 'white',
-              textAlign: 'center'
-            }}
-          >
-            <Typography variant="h4" fontWeight="800" gutterBottom>
-              Global Presence
-            </Typography>
-
-            <Typography color="rgba(255,255,255,0.8)" sx={{ mb: 4, maxWidth: 600, mx: 'auto' }}>
-              Serving clients across the globe with our US-India delivery model
-            </Typography>
-
-            <Box
-              sx={{
-                height: 300,
-                borderRadius: 3,
-                background: 'rgba(255,255,255,0.05)',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                position: 'relative',
-                overflow: 'hidden'
-              }}
-            >
-              {/* Simplified Map Visualization */}
-              <Box sx={{ position: 'relative', width: '100%', height: '100%' }}>
-                {/* USA Marker */}
-                <Box
-                  sx={{
-                    position: 'absolute',
-                    top: '40%',
-                    left: '25%',
-                    width: 60,
-                    height: 60,
-                    borderRadius: '50%',
-                    background: 'linear-gradient(135deg, #3b82f6, #1d4ed8)',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    color: 'white',
-                    fontSize: '1.5rem',
-                    fontWeight: 'bold',
-                    boxShadow: '0 0 20px rgba(59, 130, 246, 0.5)',
-                    animation: 'pulse 2s infinite'
-                  }}
-                >
-                  US
-                </Box>
-
-                {/* India Marker */}
-                <Box
-                  sx={{
-                    position: 'absolute',
-                    top: '55%',
-                    left: '70%',
-                    width: 60,
-                    height: 60,
-                    borderRadius: '50%',
-                    background: 'linear-gradient(135deg, #10b981, #059669)',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    color: 'white',
-                    fontSize: '1.5rem',
-                    fontWeight: 'bold',
-                    boxShadow: '0 0 20px rgba(16, 185, 129, 0.5)',
-                    animation: 'pulse 2s infinite',
-                    animationDelay: '1s'
-                  }}
-                >
-                  IN
-                </Box>
-
-                {/* Connection Line */}
-                <Box
-                  sx={{
-                    position: 'absolute',
-                    top: '50%',
-                    left: '30%',
-                    width: '40%',
-                    height: 2,
-                    background: 'linear-gradient(90deg, #3b82f6, #10b981)',
-                    transform: 'rotate(15deg)'
-                  }}
-                />
-              </Box>
-
-              <style jsx>{`
-                @keyframes pulse {
-                  0% { transform: scale(1); }
-                  50% { transform: scale(1.05); }
-                  100% { transform: scale(1); }
-                }
-              `}</style>
-            </Box>
-
-            <Stack direction={{ xs: 'column', sm: 'row' }} spacing={2} justifyContent="center" sx={{ mt: 4 }}>
-              <Chip
-                icon={<Place sx={{ color: '#3b82f6' }} />}
-                label="United States HQ"
-                sx={{ background: 'rgba(59, 130, 246, 0.1)', color: 'white' }}
-              />
-              <Chip
-                icon={<Place sx={{ color: '#10b981' }} />}
-                label="India Development Center"
-                sx={{ background: 'rgba(16, 185, 129, 0.1)', color: 'white' }}
-              />
-            </Stack>
-          </Paper>
-        </MotionBox>
+       
       </Container>
 
       {/* Success Snackbar */}
@@ -1028,3 +907,130 @@ const ContactUs = () => {
 }
 
 export default ContactUs
+
+
+
+
+
+ {/* Map Placeholder */}
+        // <MotionBox
+        //   initial={{ opacity: 0, y: 40 }}
+        //   whileInView={{ opacity: 1, y: 0 }}
+        //   viewport={{ once: true }}
+        //   sx={{ mt: 10 }}
+        // >
+        //   <Paper
+        //     sx={{
+        //       p: 4,
+        //       borderRadius: 4,
+        //       background: 'linear-gradient(135deg, #1e293b 0%, #0f172a 100%)',
+        //       color: 'white',
+        //       textAlign: 'center'
+        //     }}
+        //   >
+        //     <Typography variant="h4" fontWeight="800" gutterBottom>
+        //       Global Presence
+        //     </Typography>
+
+        //     <Typography color="rgba(255,255,255,0.8)" sx={{ mb: 4, maxWidth: 600, mx: 'auto' }}>
+        //       Serving clients across the globe with our US-India delivery model
+        //     </Typography>
+
+        //     <Box
+        //       sx={{
+        //         height: 300,
+        //         borderRadius: 3,
+        //         background: 'rgba(255,255,255,0.05)',
+        //         display: 'flex',
+        //         alignItems: 'center',
+        //         justifyContent: 'center',
+        //         position: 'relative',
+        //         overflow: 'hidden'
+        //       }}
+        //     >
+        //       {/* Simplified Map Visualization */}
+        //       <Box sx={{ position: 'relative', width: '100%', height: '100%' }}>
+        //         {/* USA Marker */}
+        //         <Box
+        //           sx={{
+        //             position: 'absolute',
+        //             top: '40%',
+        //             left: '25%',
+        //             width: 60,
+        //             height: 60,
+        //             borderRadius: '50%',
+        //             background: 'linear-gradient(135deg, #3b82f6, #1d4ed8)',
+        //             display: 'flex',
+        //             alignItems: 'center',
+        //             justifyContent: 'center',
+        //             color: 'white',
+        //             fontSize: '1.5rem',
+        //             fontWeight: 'bold',
+        //             boxShadow: '0 0 20px rgba(59, 130, 246, 0.5)',
+        //             animation: 'pulse 2s infinite'
+        //           }}
+        //         >
+        //           US
+        //         </Box>
+
+        //         {/* India Marker */}
+        //         <Box
+        //           sx={{
+        //             position: 'absolute',
+        //             top: '55%',
+        //             left: '70%',
+        //             width: 60,
+        //             height: 60,
+        //             borderRadius: '50%',
+        //             background: 'linear-gradient(135deg, #10b981, #059669)',
+        //             display: 'flex',
+        //             alignItems: 'center',
+        //             justifyContent: 'center',
+        //             color: 'white',
+        //             fontSize: '1.5rem',
+        //             fontWeight: 'bold',
+        //             boxShadow: '0 0 20px rgba(16, 185, 129, 0.5)',
+        //             animation: 'pulse 2s infinite',
+        //             animationDelay: '1s'
+        //           }}
+        //         >
+        //           IN
+        //         </Box>
+
+        //         {/* Connection Line */}
+        //         <Box
+        //           sx={{
+        //             position: 'absolute',
+        //             top: '50%',
+        //             left: '30%',
+        //             width: '40%',
+        //             height: 2,
+        //             background: 'linear-gradient(90deg, #3b82f6, #10b981)',
+        //             transform: 'rotate(15deg)'
+        //           }}
+        //         />
+        //       </Box>
+
+        //       <style jsx>{`
+        //         @keyframes pulse {
+        //           0% { transform: scale(1); }
+        //           50% { transform: scale(1.05); }
+        //           100% { transform: scale(1); }
+        //         }
+        //       `}</style>
+        //     </Box>
+
+        //     <Stack direction={{ xs: 'column', sm: 'row' }} spacing={2} justifyContent="center" sx={{ mt: 4 }}>
+        //       <Chip
+        //         icon={<Place sx={{ color: '#3b82f6' }} />}
+        //         label="United States HQ"
+        //         sx={{ background: 'rgba(59, 130, 246, 0.1)', color: 'white' }}
+        //       />
+        //       <Chip
+        //         icon={<Place sx={{ color: '#10b981' }} />}
+        //         label="India Development Center"
+        //         sx={{ background: 'rgba(16, 185, 129, 0.1)', color: 'white' }}
+        //       />
+        //     </Stack>
+        //   </Paper>
+        // </MotionBox>

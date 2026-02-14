@@ -9,12 +9,15 @@ import AboutUs from './pages/AboutUs.jsx'
 import Careers from './pages/Careers.jsx'
 import ContactUs from './pages/ContactUs.jsx'
 import Solutions from './pages/Solutions.jsx'
+import ScrollToTop from './ScrollToTop.jsx'
 
 const Router = () => {
     return (
         <BrowserRouter>
             <Header />
+            <ScrollToTop />
             <Routes>
+
                 <Route path="/" element={<Home />} />
                 <Route path="/products" element={<Products />} />
                 <Route path="/delivery-model" element={<DeliveryModel />} />
@@ -22,10 +25,6 @@ const Router = () => {
                 <Route path="/about-us" element={<AboutUs />} />
                 <Route path="/careers" element={<Careers />} />
                 <Route path="/contact" element={<ContactUs />} />
-
-
-
-
 
             </Routes>
             <Footer />

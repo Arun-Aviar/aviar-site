@@ -1,10 +1,13 @@
-  import React from 'react'
-  import Router from './Router'
+import React from 'react'
+import Router from './Router'
 
-  const App = () => {
-    return (
+const App = () => {
+  return (
+
+    <>
       <Router />
-    )
-  }
+    </>
+  )
+}
 
-  export default App
+export default App

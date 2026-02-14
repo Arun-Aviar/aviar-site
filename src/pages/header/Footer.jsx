@@ -41,11 +41,20 @@ const Footer = () => {
 
                     {/* Contact Info */}
                     <Grid item xs={12} sm={4}>
-                        <Typography variant="h6" gutterBottom fontWeight="bold">
+                        <Typography variant="h6" fontWeight="bold">
                             Contact Info
+                        </Typography>
+                        <Typography gutterBottom fontWeight="bold">
+                            India - Contact
                         </Typography>
                         <Typography>Email: aviar@aviartechservices.com</Typography>
                         <Typography>Phone: +91 86680 65758</Typography>
+                        <hr />
+                        <Typography gutterBottom fontWeight="bold">
+                            USA - Contact
+                        </Typography>
+                        <Typography>Phone: +1 309 750 1082</Typography>
+
                         {/* <Typography>Phone: +91 98765 43210</Typography> */}
 
                         {/* <Typography>Fax: +91 12345 67890</Typography> */}
@@ -78,16 +87,16 @@ const Footer = () => {
                     <Grid item xs={12} sm={4}>
                         <Typography variant="h6" gutterBottom fontWeight="bold" >Follow us:</Typography>
                         <Box mt={1}>
-                            <IconButton color="inherit" href="#">
+                            <IconButton color="inherit" target='blank' href="https://www.facebook.com/share/1aE3gBnDhY/">
                                 <Facebook />
                             </IconButton>
-                            <IconButton color="inherit" href="#">
+                            {/* <IconButton color="inherit" href="#">
                                 <Twitter />
-                            </IconButton>
-                            <IconButton color="inherit" href="#">
+                            </IconButton> */}
+                            <IconButton color="inherit" target='blank' href="https://www.linkedin.com/company/aviartechservices/">
                                 <LinkedIn />
                             </IconButton>
-                            <IconButton color="inherit" href="#">
+                            <IconButton color="inherit" target='blank' href="https://www.instagram.com/aviar_technology_services?igsh=NXM5NmZjbW91MDRm">
                                 <Instagram />
                             </IconButton>
                         </Box>

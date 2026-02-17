@@ -11,35 +11,38 @@ const capabilities = [
   {
     title: 'Project Development',
     description:
-      'End-to-end execution of technology projects — from requirements and architecture to development, testing, and deployment.',
+      'End-to-end execution of enterprise initiatives — from architecture design and technical planning to development, QA, deployment, and support.',
     outcomes: [
-      'Predictable delivery',
-      'Reduced project risk',
-      'Faster time-to-market'
+      'Predictable timelines',
+      'Defined milestones',
+      'Structured reporting',
+      'Risk mitigation'
     ],
     icon: <BuildIcon />,
     gradient: 'linear-gradient(180deg, #4facfe, #00f2fe)'
   },
   {
-    title: 'Product Development',
+    title: 'Product Engineering',
     description:
-      'We partner with companies to build, enhance, and scale software products — from MVP to enterprise-grade platforms.',
+      'We partner with product companies and startups to design, build, and scale software platforms from MVP to enterprise-grade systems.',
     outcomes: [
-      'Scalable architectures',
-      'Faster innovation cycles',
-      'Long-term product ownership'
+      'Scalable system architecture',
+      'Performance optimization',
+      'Continuous feature enhancement',
+      'Long-term technical ownership'
     ],
     icon: <RocketLaunchIcon />,
     gradient: 'linear-gradient(180deg, #43e97b, #38f9d7)'
   },
   {
-    title: 'IT Services & Support',
+    title: 'Managed IT & Application Support',
     description:
-      'Ongoing application support, enhancements, and managed services tailored to your business needs.',
+      'Ongoing maintenance, upgrades, and SLA-driven support for mission-critical systems.',
     outcomes: [
-      'Operational stability',
-      'Lower support costs',
-      'SLA-driven delivery'
+      'Stability',
+      'Cost-controlled operations',
+      'Performance monitoring',
+      'Continuous improvement'
     ],
     icon: <SupportAgentIcon />,
     gradient: 'linear-gradient(180deg, #fa709a, #fee140)'
@@ -68,7 +71,8 @@ const WhatWeDo = () => {
               fontSize: { xs: '0.7rem', sm: '0.75rem' }
             }}
           >
-            WHAT WE DO
+            {/* WHAT WE DO */}
+            CORE SERVICES
           </Typography>
 
           <Typography 
@@ -192,7 +196,7 @@ const WhatWeDo = () => {
                   fontSize: { xs: '1rem', sm: '1.1rem' }
                 }}
               >
-                Outcomes
+                Deliverables : 
               </Typography>
 
               {/* Outcomes - Mobile optimized layout */}

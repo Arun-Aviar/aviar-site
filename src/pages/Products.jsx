@@ -1,96 +1,123 @@
 import React from 'react'
-import { Container, Typography, Box, Grid, Chip } from '@mui/material'
+import { Container, Typography, Box, Grid, Chip, List, ListItem, ListItemIcon, ListItemText } from '@mui/material'
 import { motion } from 'framer-motion'
-import { PhoneAndroid, Web } from '@mui/icons-material'
+import { 
+  PhoneAndroid, 
+  Web, 
+  CheckCircle, 
+  TrendingUp,
+  School,
+  Groups,
+  ContentCut,
+  Public,
+  Dashboard,
+  Event,
+  Payment,
+  Notifications,
+  Analytics,
+  People,
+  DirectionsBus,
+  Campaign
+} from '@mui/icons-material'
 
 const MotionBox = motion(Box)
 
-const mobileApps = [
+const products = [
   {
-    name: 'Alumni',
-    desc: 'A networking platform that connects alumni communities and institutions.',
-    tags: ['Networking', 'Community'],
-    icon: '👥'
+    name: 'Alumni Engagement Platform',
+    description: 'A scalable alumni networking and engagement platform designed for schools, universities, and professional institutions.',
+    icon: <Groups />,
+    iconBg: '#4facfe',
+    type: 'web',
+    capabilities: [
+      'Centralized alumni database management',
+      'Event coordination and registration',
+      'Integrated communication modules',
+      'Payment gateway integration for donations',
+      'Community building tools'
+    ],
+    impact: [
+      'Increased alumni engagement',
+      'Structured fundraising capability',
+      'Improved institutional visibility',
+      'Automated communication workflows'
+    ]
   },
   {
-    name: 'Leading Jewellery Client',
-    desc: 'A custom mobile solution streamlining retail and inventory operations.',
-    tags: ['Retail', 'Inventory'],
-    icon: '💎'
+    name: 'Saloon Management Application',
+    description: 'A customer-centric appointment and engagement platform for modern salon and grooming businesses.',
+    icon: <ContentCut />,
+    iconBg: '#43e97b',
+    type: 'mobile',
+    capabilities: [
+      'Real-time appointment scheduling',
+      'Offer & campaign management',
+      'Automated service reminders',
+      'Customer preference tracking',
+      'Analytics dashboard'
+    ],
+    impact: [
+      'Increased repeat customer rate',
+      'Reduced no-shows',
+      'Improved operational scheduling',
+      'Data-driven service optimization'
+    ]
   },
   {
-    name: 'Tamizhal Inaivom',
-    desc: 'A community engagement app promoting cultural collaboration.',
-    tags: ['Culture', 'Community'],
-    icon: '🌿'
+    name: 'School Management Mobile Platform',
+    description: 'An integrated digital platform for educational institutions to manage academic, operational, and communication workflows.',
+    icon: <School />,
+    iconBg: '#a78bfa',
+    type: 'mobile',
+    capabilities: [
+      'Student performance tracking',
+      'Attendance management',
+      'Bus tracking integration',
+      'Administrative workflows',
+      'Parent communication modules'
+    ],
+    impact: [
+      'Improved transparency',
+      'Reduced administrative overhead',
+      'Enhanced parent engagement',
+      'Digitized institutional operations'
+    ]
   },
   {
-    name: 'Salon App',
-    desc: 'An appointment and customer management platform for salons.',
-    tags: ['Booking', 'Service'],
-    icon: '✂️'
-  },
-  {
-    name: 'Student App',
-    desc: 'A digital learning companion for students and institutions.',
-    tags: ['Education', 'Learning'],
-    icon: '🎓'
+    name: 'Tamizhal Inaivom Platform',
+    description: 'A global community platform designed to connect Tamil professionals and families living abroad.',
+    icon: <Public />,
+    iconBg: '#f97316',
+    type: 'web',
+    capabilities: [
+      'Community networking',
+      'Event organization',
+      'Travel coordination',
+      'Local carpool arrangement',
+      'Cultural event broadcasting'
+    ],
+    impact: [
+      'Strengthened community connectivity',
+      'Structured global engagement',
+      'Simplified event and travel coordination'
+    ]
   }
 ]
 
-const webApps = [
-  {
-    name: 'Kharpi',
-    desc: 'A web platform designed for streamlined business workflows.',
-    tags: ['Business', 'Automation'],
-    icon: '⚙️'
-  },
-  {
-    name: 'Relisafe',
-    desc: 'A compliance and safety management solution for enterprises.',
-    tags: ['Compliance', 'Safety'],
-    icon: '🛡️'
-  },
-  {
-    name: 'Online Dispute Resolution',
-    desc: 'A secure platform enabling digital legal dispute resolution.',
-    tags: ['Legal', 'Security'],
-    icon: '⚖️'
-  },
-  {
-    name: 'Liveez (Apartment)',
-    desc: 'A smart community management system for apartment living.',
-    tags: ['Community', 'Management'],
-    icon: '🏠'
-  },
-  {
-    name: 'Mortgage Company',
-    desc: 'A digital mortgage processing and customer engagement platform.',
-    tags: ['Finance', 'Processing'],
-    icon: '💰'
-  },
-  {
-    name: 'Construction Company',
-    desc: 'A project and resource management solution for construction firms.',
-    tags: ['Construction', 'Management'],
-    icon: '🏗️'
-  }
-]
-
-const ProductCard = ({ name, desc, tags, icon, index, type }) => {
-  const isMobile = type === 'mobile'
+const ProductCard = ({ product, index }) => {
+  const isMobile = product.type === 'mobile'
   
   return (
     <MotionBox
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       whileHover={{ 
-        y: -12,
-        boxShadow: '0 30px 60px rgba(0,0,0,0.15)'
+        y: -8,
+        boxShadow: '0 30px 60px rgba(0,0,0,0.12)'
       }}
       transition={{ 
-        duration: 0.6, 
-        delay: index * 0.05,
+        duration: 0.5, 
+        delay: index * 0.1,
         type: "spring",
         stiffness: 100
       }}
@@ -98,118 +125,62 @@ const ProductCard = ({ name, desc, tags, icon, index, type }) => {
       sx={{
         position: 'relative',
         height: '100%',
-        borderRadius: 3,
+        borderRadius: 4,
         overflow: 'hidden',
-        cursor: 'pointer',
-        background: 'linear-gradient(135deg, #ffffff 0%, #f8fafc 100%)',
-        boxShadow: '0 10px 30px rgba(0,0,0,0.08)',
-        border: '1px solid rgba(255,255,255,0.2)',
-        '&::before': {
-          content: '""',
-          position: 'absolute',
-          inset: 0,
-          background: isMobile 
-            ? 'linear-gradient(135deg, rgba(79, 172, 254, 0.03), rgba(0, 242, 254, 0.03))'
-            : 'linear-gradient(135deg, rgba(67, 233, 123, 0.03), rgba(56, 249, 215, 0.03))',
-          zIndex: 0
-        }
+        background: '#ffffff',
+        boxShadow: '0 10px 30px rgba(0,0,0,0.05)',
+        border: '1px solid rgba(255,255,255,0.3)',
+        transition: 'all 0.3s ease'
       }}
     >
-      {/* Background Pattern */}
+      {/* Header Gradient */}
       <Box
         sx={{
-          position: 'absolute',
-          width: '100%',
-          height: '100%',
-          background: isMobile
-            ? 'radial-gradient(circle at 20% 80%, rgba(79, 172, 254, 0.05) 0%, transparent 50%)'
-            : 'radial-gradient(circle at 20% 80%, rgba(67, 233, 123, 0.05) 0%, transparent 50%)',
-          zIndex: 0
+          height: 8,
+          background: `linear-gradient(90deg, ${product.iconBg}40, ${product.iconBg})`
         }}
       />
-      
-      {/* Animated Gradient Border */}
-      <Box
-        sx={{
-          position: 'absolute',
-          inset: 0,
-          padding: '1px',
-          background: isMobile
-            ? 'linear-gradient(135deg, #3991deff, #0378edff)'
-            : 'linear-gradient(135deg, #3a94e2ff, #0075eaff)',
-          WebkitMask: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
-          WebkitMaskComposite: 'xor',
-          maskComposite: 'exclude',
-          borderRadius: 3,
-          opacity: 0,
-          transition: 'opacity 0.3s ease',
-          '&:hover': {
-            opacity: 1
-          }
-        }}
-      />
-      
-      {/* Icon Container */}
-      <MotionBox
-        initial={{ scale: 0 }}
-        whileInView={{ scale: 1 }}
-        transition={{ delay: index * 0.05 + 0.2 }}
-        sx={{
-          position: 'absolute',
-          top: 24,
-          right: 24,
-          width: 56,
-          height: 56,
-          borderRadius: '50%',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          background: isMobile
-            ? 'linear-gradient(135deg, rgba(79, 172, 254, 0.1), rgba(0, 242, 254, 0.1))'
-            : 'linear-gradient(135deg, rgba(67, 233, 123, 0.1), rgba(56, 249, 215, 0.1))',
-          fontSize: 28,
-          zIndex: 1
-        }}
-      >
-        {icon}
-      </MotionBox>
 
       {/* Content */}
-      <Box sx={{ position: 'relative', zIndex: 1, p: 4 }}>
-        {/* Type Badge */}
-        <Chip
-          icon={isMobile ? <PhoneAndroid /> : <Web />}
-          label={isMobile ? 'Mobile' : 'Web'}
-          size="small"
-          sx={{
-            mb: 3,
-            background: isMobile
-              ? 'linear-gradient(135deg, #4facfe, #00aefeff)'
-              : 'linear-gradient(135deg, #43b7e9ff, #38ccf9ff)',
-            color: 'black',
-            fontWeight: 600,
-            '& .MuiChip-icon': {
-              color: 'white'
-            }
-          }}
-        />
+      <Box sx={{ p: 4 }}>
+        {/* Icon and Type */}
+        <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', mb: 3 }}>
+          <Box
+            sx={{
+              width: 56,
+              height: 56,
+              borderRadius: 2,
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              background: `${product.iconBg}15`,
+              color: product.iconBg,
+              fontSize: 28
+            }}
+          >
+            {product.icon}
+          </Box>
+          <Chip
+            icon={isMobile ? <PhoneAndroid sx={{ fontSize: 16 }} /> : <Web sx={{ fontSize: 16 }} />}
+            label={isMobile ? 'Mobile App' : 'Web Platform'}
+            size="small"
+            sx={{
+              background: `${product.iconBg}10`,
+              color: product.iconBg,
+              fontWeight: 600,
+              border: `1px solid ${product.iconBg}30`
+            }}
+          />
+        </Box>
 
-        {/* Name */}
+        {/* Title */}
         <Typography 
           variant="h5" 
           fontWeight="700" 
           gutterBottom
-          sx={{
-            background: isMobile
-              ? 'linear-gradient(135deg, #4facfe, #0083feff)'
-              : 'linear-gradient(135deg, #43c8e9ff, #389cf9ff)',
-            WebkitBackgroundClip: 'text',
-            WebkitTextFillColor: 'transparent',
-            backgroundClip: 'text',
-            pr: 6
-          }}
+          sx={{ color: '#1a2639' }}
         >
-          {name}
+          {product.name}
         </Typography>
 
         {/* Description */}
@@ -217,29 +188,78 @@ const ProductCard = ({ name, desc, tags, icon, index, type }) => {
           color="text.secondary" 
           sx={{ 
             lineHeight: 1.7,
-            mb: 3,
+            mb: 4,
             fontSize: '0.95rem'
           }}
         >
-          {desc}
+          {product.description}
         </Typography>
 
-        {/* Tags */}
-        <Box sx={{ display: 'flex', gap: 1, flexWrap: 'wrap' }}>
-          {tags.map((tag) => (
-            <Chip
-              key={tag}
-              label={tag}
-              size="small"
-              variant="outlined"
-              sx={{
-                borderColor: isMobile ? '#4facfe40' : '#43e97b40',
-                color: isMobile ? '#4facfe' : '#43bde9ff',
-                fontWeight: 500,
-                fontSize: '0.75rem'
-              }}
-            />
-          ))}
+        {/* Capabilities Section */}
+        <Box sx={{ mb: 3 }}>
+          <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mb: 2 }}>
+            <Dashboard sx={{ color: product.iconBg, fontSize: 20 }} />
+            <Typography fontWeight="600" variant="subtitle1">
+              Capabilities
+            </Typography>
+          </Box>
+          <List dense disablePadding>
+            {product.capabilities.map((cap, i) => (
+              <ListItem key={i} disableGutters sx={{ py: 0.5 }}>
+                <ListItemIcon sx={{ minWidth: 32 }}>
+                  <CheckCircle sx={{ color: product.iconBg, fontSize: 18 }} />
+                </ListItemIcon>
+                <ListItemText 
+                  primary={cap}
+                  primaryTypographyProps={{ 
+                    variant: 'body2',
+                    sx: { color: '#2d3a4f' }
+                  }}
+                />
+              </ListItem>
+            ))}
+          </List>
+        </Box>
+
+        {/* Business Impact Section */}
+        <Box>
+          <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mb: 2 }}>
+            <TrendingUp sx={{ color: product.iconBg, fontSize: 20 }} />
+            <Typography fontWeight="600" variant="subtitle1">
+              Business Impact
+            </Typography>
+          </Box>
+          <List dense disablePadding>
+            {product.impact.map((imp, i) => (
+              <ListItem key={i} disableGutters sx={{ py: 0.5 }}>
+                <ListItemIcon sx={{ minWidth: 32 }}>
+                  <Box
+                    sx={{
+                      width: 18,
+                      height: 18,
+                      borderRadius: 1,
+                      background: `${product.iconBg}20`,
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      color: product.iconBg,
+                      fontSize: 12,
+                      fontWeight: 'bold'
+                    }}
+                  >
+                    {i + 1}
+                  </Box>
+                </ListItemIcon>
+                <ListItemText 
+                  primary={imp}
+                  primaryTypographyProps={{ 
+                    variant: 'body2',
+                    sx: { color: '#2d3a4f', fontWeight: 500 }
+                  }}
+                />
+              </ListItem>
+            ))}
+          </List>
         </Box>
       </Box>
     </MotionBox>
@@ -249,10 +269,11 @@ const ProductCard = ({ name, desc, tags, icon, index, type }) => {
 const Products = () => {
   return (
     <Box sx={{ 
-      py: { xs: 12, md: 16 },
-      background: 'linear-gradient(135deg, #f5f7fa 0%, #e3f2fd 50%, #f8fafc 100%)',
+      py: { xs: 8, md: 12 },
+      background: 'linear-gradient(145deg, #f8fafc 0%, #f1f5f9 100%)',
       position: 'relative',
-      overflow: 'hidden'
+      overflow: 'hidden',
+      minHeight: '100vh'
     }}>
       {/* Background Elements */}
       <Box
@@ -260,10 +281,11 @@ const Products = () => {
           position: 'absolute',
           top: 0,
           right: 0,
-          width: 400,
-          height: 400,
-          background: 'radial-gradient(circle, rgba(79, 172, 254, 0.1) 0%, transparent 70%)',
-          transform: 'translate(30%, -30%)'
+          width: 600,
+          height: 600,
+          background: 'radial-gradient(circle, rgba(79, 172, 254, 0.05) 0%, transparent 70%)',
+          transform: 'translate(30%, -30%)',
+          borderRadius: '50%'
         }}
       />
       <Box
@@ -271,10 +293,11 @@ const Products = () => {
           position: 'absolute',
           bottom: 0,
           left: 0,
-          width: 300,
-          height: 300,
-          background: 'radial-gradient(circle, rgba(67, 233, 123, 0.1) 0%, transparent 70%)',
-          transform: 'translate(-30%, 30%)'
+          width: 500,
+          height: 500,
+          background: 'radial-gradient(circle, rgba(67, 233, 123, 0.05) 0%, transparent 70%)',
+          transform: 'translate(-30%, 30%)',
+          borderRadius: '50%'
         }}
       />
 
@@ -286,141 +309,101 @@ const Products = () => {
           viewport={{ once: true }}
           sx={{ 
             textAlign: 'center', 
-            mb: 12,
+            mb: 8,
             position: 'relative',
             zIndex: 1
           }}
         >
           <Chip 
-            label="OUR PORTFOLIO" 
+            label="OUR PRODUCTS" 
             sx={{ 
               mb: 3,
               px: 2,
-              py: 0.5,
-              background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+              background: 'linear-gradient(135deg, #1e293b, #334155)',
               color: 'white',
               fontWeight: 600,
-              letterSpacing: 1
+              letterSpacing: 1,
+              borderRadius: 1
             }}
           />
           
           <Typography 
             variant="h2" 
-            fontWeight="900" 
+            fontWeight="800" 
             gutterBottom
             sx={{
               fontSize: { xs: '2.5rem', md: '3.5rem' },
-              background: 'linear-gradient(135deg, #2c3e50 0%, #4a6491 100%)',
+              background: 'linear-gradient(135deg, #0f172a, #1e293b)',
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent',
-              backgroundClip: 'text'
+              backgroundClip: 'text',
+              letterSpacing: '-0.02em'
             }}
           >
-            Digital Products
+            Digital Solutions
           </Typography>
           
           <Typography
             variant="h6"
-            color="text.secondary"
             sx={{ 
               maxWidth: 700, 
               mx: 'auto',
+              color: '#475569',
               fontSize: '1.1rem',
-              lineHeight: 1.8
+              lineHeight: 1.7
             }}
           >
-            We craft exceptional digital experiences that solve complex business 
-            challenges through innovative mobile and web solutions.
+            Comprehensive platforms that transform how organizations connect, 
+            manage operations, and drive engagement.
           </Typography>
         </MotionBox>
 
-        {/* Mobile Apps Section */}
-        <MotionBox
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true, margin: "-100px" }}
-          sx={{ mb: 12 }}
-        >
-          <Box sx={{ display: 'flex', alignItems: 'center', mb: 6 }}>
-            <Box sx={{ 
-              width: 4, 
-              height: 40, 
-              mr: 3,
-              background: 'linear-gradient(135deg, #53a2e7ff, #246df4ff)',
-              borderRadius: 2
-            }} />
-            <Typography variant="h3" fontWeight="800">
-              Mobile Applications
-            </Typography>
-            <Box sx={{ flex: 1, ml: 3, height: 2, background: 'linear-gradient(90deg, #4facfe20, transparent)' }} />
-          </Box>
+        {/* Products Grid */}
+        <Grid container spacing={4}>
+          {products.map((product, index) => (
+            <Grid item xs={12} md={6} key={product.name}>
+              <ProductCard product={product} index={index} />
+            </Grid>
+          ))}
+        </Grid>
 
-          <Grid container spacing={4}>
-            {mobileApps.map((app, index) => (
-              <Grid item xs={12} sm={6} lg={4} key={app.name}>
-                <ProductCard
-                  {...app}
-                  index={index}
-                  type="mobile"
-                />
-              </Grid>
-            ))}
-          </Grid>
-        </MotionBox>
-
-        {/* Web Apps Section */}
-        <MotionBox
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true, margin: "-100px" }}
-        >
-          <Box sx={{ display: 'flex', alignItems: 'center', mb: 6 }}>
-            <Box sx={{ 
-              width: 4, 
-              height: 40, 
-              mr: 3,
-              background: 'linear-gradient(135deg, #43e97b, #38f9d7)',
-              borderRadius: 2
-            }} />
-            <Typography variant="h3" fontWeight="800">
-              Web Applications
-            </Typography>
-            <Box sx={{ flex: 1, ml: 3, height: 2, background: 'linear-gradient(90deg, #43e97b20, transparent)' }} />
-          </Box>
-
-          <Grid container spacing={4}>
-            {webApps.map((app, index) => (
-              <Grid item xs={12} sm={6} lg={4} key={app.name}>
-                <ProductCard
-                  {...app}
-                  index={index}
-                  type="web"
-                />
-              </Grid>
-            ))}
-          </Grid>
-        </MotionBox>
-
-        {/* Footer Note */}
-        <MotionBox
+        {/* Stats Section */}
+        {/* <MotionBox
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           sx={{
-            textAlign: 'center',
+            display: 'grid',
+            gridTemplateColumns: { xs: '1fr', sm: 'repeat(4, 1fr)' },
+            gap: 3,
             mt: 12,
-            pt: 6,
-            borderTop: '1px solid rgba(0,0,0,0.05)'
+            p: 4,
+            background: 'rgba(255,255,255,0.8)',
+            backdropFilter: 'blur(10px)',
+            borderRadius: 4,
+            border: '1px solid rgba(255,255,255,0.5)'
           }}
         >
-          <Typography 
-            variant="h6" 
-            color="text.secondary"
-            sx={{ fontStyle: 'italic', maxWidth: 600, mx: 'auto' }}
-          >
-            "Every product is a unique solution, crafted with precision and designed for impact."
-          </Typography>
-        </MotionBox>
+          {[
+            { value: '15+', label: 'Products Launched', color: '#4facfe' },
+            { value: '50k+', label: 'Active Users', color: '#43e97b' },
+            { value: '98%', label: 'Client Satisfaction', color: '#a78bfa' },
+            { value: '24/7', label: 'Support Available', color: '#f97316' }
+          ].map((stat, i) => (
+            <Box key={i} sx={{ textAlign: 'center' }}>
+              <Typography 
+                variant="h3" 
+                fontWeight="800"
+                sx={{ color: stat.color }}
+              >
+                {stat.value}
+              </Typography>
+              <Typography variant="body2" color="text.secondary">
+                {stat.label}
+              </Typography>
+            </Box>
+          ))}
+        </MotionBox> */}
       </Container>
     </Box>
   )

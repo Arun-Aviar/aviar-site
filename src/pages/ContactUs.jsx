@@ -92,7 +92,7 @@ const ContactUs = () => {
     {
       title: 'United States Headquarters',
       address: 'Bloomington, Illinois',
-      phone: '+1 (555) 123-4567',
+      phone: '+1 (309) 750-1082',
       email: 'aviar@aviartechservices.com',
       icon: <Place />,
       color: '#3b82f6'
@@ -112,7 +112,7 @@ const ContactUs = () => {
     // { platform: 'Twitter', icon: <Twitter />, color: '#1da1f2', url: '#' },
     { platform: 'Facebook', icon: <Facebook />, color: '#1877f2', url: 'https://www.facebook.com/share/1aE3gBnDhY/' },
     { platform: 'Instagram', icon: <Instagram />, color: '#e4405f', url: 'https://www.instagram.com/aviar_technology_services?igsh=NXM5NmZjbW91MDRm' },
-    { platform: 'WhatsApp', icon: <WhatsApp />, color: '#25d366', url: "https://wa.me/918668065758" }
+    { platform: 'WhatsApp', icon: <WhatsApp />, color: '#25d366', url: "https://wa.me/+13097501082" }
   ]
 
   const handleChange = (e) => {
@@ -148,13 +148,13 @@ const ContactUs = () => {
   const handleQuickContact = (method) => {
     switch (method) {
       case 'email':
-        window.location.href = 'mailto:contact@aviar.tech'
+        window.location.href = 'aviar@aviartechservices.com'
         break
       case 'whatsapp':
-        window.open('https://wa.me/15551234567', '_blank')
+        window.open('https://wa.me/13097501082', '_blank')
         break
       case 'call':
-        window.location.href = 'tel:+15551234567'
+        window.location.href = 'tel:+13097501082'
         break
       default:
         break

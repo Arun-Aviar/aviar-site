@@ -10,6 +10,11 @@ import {
   IconButton,
   Input,
   Grid,
+  FormControl,
+  InputLabel,
+  FormHelperText,
+  Select,
+  MenuItem,
   TextField,
   Chip
 } from '@mui/material'
@@ -36,6 +41,85 @@ const Home = () => {
     place: "",
     educationQualification: "",
   });
+
+  const validateField = (name, value) => {
+    let error = "";
+
+    switch (name) {
+      case "firstName":
+        if (!value.trim()) {
+          error = "First name is required";
+        } else if (!/^[A-Za-z\s]+$/.test(value)) {
+          error = "only alphabets";
+        } else if (value.trim().length < 2) {
+          error = "at least 2 characters";
+        }
+        break;
+
+      case "lastName":
+        if (!value.trim()) {
+          error = "Last name is required";
+        } else if (!/^[A-Za-z\s]+$/.test(value)) {
+          error = "only alphabets";
+        }
+        break;
+
+      case "email":
+        if (!value.trim()) {
+          error = "Email is required";
+        }
+        else if (value.length > 254) {
+          error = "Email is too long";
+        }
+        else if (
+          !/^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/.test(value)
+        ) {
+          error = "Enter a valid email address";
+        }
+        break;
+
+      case "phoneNumber":
+        if (!value) error = "Phone number is required";
+        else if (value.length < 10) error = "Enter valid phone number";
+        break;
+
+      case "gender":
+        if (!value) error = "Gender is required";
+        break;
+
+
+      case "educationQualification":
+        if (!value.trim()) {
+          error = "Education is required";
+        }
+        else if (!/^[A-Za-z.\s]+$/.test(value)) {
+          error = "Only letters are allowed";
+        }
+        else if (value.trim().length < 2) {
+          error = "At least 2 characters";
+        }
+        break;
+
+       case "whoYouAre":
+        if (!value.trim()) {
+          error = "This field is required";
+        } 
+        break;
+
+       case "place":
+        if (!value.trim()) {
+          error = "This field is required";
+        } 
+        break;
+
+      default:
+        break;
+    }
+
+    return error;
+  };
+
+
 
   const validate = () => {
     const newErrors = {};
@@ -85,13 +169,38 @@ const Home = () => {
 
 
   const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
+    const { name, value } = e.target;
+
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+
+    setErrors((prev) => ({
+      ...prev,
+      [name]: validateField(name, value),
+    }));
   };
 
-  const handleSubmit = async () => {
+  const handleBlur = (e) => {
+    const { name, value } = e.target;
+
+    setErrors((prev) => ({
+      ...prev,
+      [name]: validateField(name, value),
+    }));
+  };
+
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const newErrors = {};
+    Object.keys(formData).forEach((key) => {
+      const error = validateField(key, formData[key]);
+      if (error) newErrors[key] = error;
+    });
+    setErrors(newErrors);
+    if (Object.keys(newErrors).length > 0) return;
     if (!validate()) return;
     setLoading(true);
     try {
@@ -100,16 +209,26 @@ const Home = () => {
         formData
       );
       console.log(res);
-      // alert(res);
-
-      // ✅ Close modal ONLY on success
+      // setFormModal(false);
+      setFormData({
+        firstName: "",
+        lastName: "",
+        email: "",
+        phoneNumber: "",
+        gender: "",
+        whoYouAre: "",
+        place: "",
+        educationQualification: "",
+      })
+      alert("Registered Successfully!")
       setFormModal(false);
+
+
     } catch (error) {
       console.error(error);
-      // ✅ Show backend error message if exists
       const message =
         error.response?.data?.error || "Something went wrong";
-      alert(message); // or snackbar / toast
+      alert(message);
     } finally {
       setLoading(false);
     }
@@ -178,7 +297,7 @@ const Home = () => {
                 px: 1.5,
                 textAlign: "center",
                 fontSize: 14,
-                bgcolor:'#1b5499ff',
+                bgcolor: '#1b5499ff',
                 color: 'white',
               }}
             />
@@ -416,6 +535,7 @@ const Home = () => {
             <Grid item xs={12} md={6}>
               <TextField
                 fullWidth
+                onBlur={handleBlur}
                 required
                 label="First Name"
                 name="firstName"
@@ -432,6 +552,7 @@ const Home = () => {
                 label="Last Name"
                 name="lastName"
                 value={formData.lastName}
+                onBlur={handleBlur}
                 onChange={handleChange}
                 error={!!errors.lastName}
                 helperText={errors.lastName}
@@ -445,6 +566,7 @@ const Home = () => {
                 name="email"
                 type="email"
                 value={formData.email}
+                onBlur={handleBlur}
                 onChange={handleChange}
                 error={!!errors.email}
                 helperText={errors.email}
@@ -458,34 +580,85 @@ const Home = () => {
                 name="phoneNumber"
                 type="number"
                 value={formData.phoneNumber}
+                onBlur={handleBlur}
                 onChange={handleChange}
                 error={!!errors.phoneNumber}
                 helperText={errors.phoneNumber}
               />
             </Grid>
             <Grid item xs={12} md={6}>
-              <TextField
+              <FormControl
                 fullWidth
                 required
-                label="Gender"
-                name="gender"
-                value={formData.gender}
-                onChange={handleChange}
+                sx={{ minWidth: 195 }}
                 error={!!errors.gender}
-                helperText={errors.gender}
-              />
+              >
+                <InputLabel id="gender-label">Gender</InputLabel>
+
+                <Select
+                  labelId="gender-label"
+                  id="gender"
+                  name="gender"
+                  value={formData.gender}
+                  label="Gender"
+                  onBlur={handleBlur}
+                  onChange={handleChange}
+                >
+                  <MenuItem value="">
+                    <em>Select Gender</em>
+                  </MenuItem>
+                  <MenuItem value="male">Male</MenuItem>
+                  <MenuItem value="female">Female</MenuItem>
+                </Select>
+
+                <FormHelperText>{errors.gender}</FormHelperText>
+              </FormControl>
             </Grid>
+
             <Grid item xs={12} md={6}>
-              <TextField
+              {/* <TextField
                 fullWidth
                 required
                 label="Who You Are"
                 name="whoYouAre"
                 value={formData.whoYouAre}
+                onBlur={handleBlur}
                 onChange={handleChange}
                 error={!!errors.whoYouAre}
                 helperText={errors.whoYouAre}
-              />
+              /> */}
+
+              <FormControl
+                fullWidth
+                required
+                sx={{ minWidth: 195 }}
+                error={!!errors.whoYouAre}
+              >
+                <InputLabel id="whoYouAre-label">Who You Are</InputLabel>
+
+                <Select
+                  labelId="whoYouAre-label"
+                  id="whoYouAre"
+                  name="whoYouAre"
+                  value={formData.whoYouAre}
+                  label="Who You Are"
+                  onBlur={handleBlur}
+                  onChange={handleChange}
+                >
+                  <MenuItem value="">
+                    <em>Select </em>
+                  </MenuItem>
+                  <MenuItem value="student">Student</MenuItem>
+                  <MenuItem value="recent_graduate">Recent Graduate</MenuItem>
+                  <MenuItem value="working_professional">Working Professional</MenuItem>
+                  <MenuItem value="job_seeker">Job Seeker</MenuItem>
+
+                </Select>
+
+                <FormHelperText>{errors.whoYouAre}</FormHelperText>
+              </FormControl>
+
+
             </Grid>
             <Grid item xs={12} md={6}>
               <TextField
@@ -494,6 +667,7 @@ const Home = () => {
                 label="Place"
                 name="place"
                 value={formData.place}
+                onBlur={handleBlur}
                 onChange={handleChange}
                 error={!!errors.place}
                 helperText={errors.place}
@@ -506,6 +680,7 @@ const Home = () => {
                 label="Education Qualification"
                 name="educationQualification"
                 value={formData.educationQualification}
+                onBlur={handleBlur}
                 onChange={handleChange}
                 error={!!errors.educationQualification}
                 helperText={errors.educationQualification}

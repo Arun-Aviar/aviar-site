@@ -51,7 +51,8 @@ import {
   Send,
   LinkedIn,
   Facebook,
-  Twitter
+  Twitter,
+  Instagram
 } from '@mui/icons-material'
 
 const MotionBox = motion(Box)
@@ -1006,20 +1007,26 @@ const Careers = () => {
                   startIcon={<LinkedIn />}
                   sx={{ color: 'white', borderColor: 'rgba(255,255,255,0.3)' }}
                   variant="outlined"
+                  target='blank'
+                  href='https://www.linkedin.com/company/aviartechservices/'
                 >
                   LinkedIn
                 </Button>
                 <Button
-                  startIcon={<Twitter />}
+                  startIcon={<Instagram />}
                   sx={{ color: 'white', borderColor: 'rgba(255,255,255,0.3)' }}
                   variant="outlined"
+                  target='blank'
+                  href='https://www.instagram.com/aviar_technology_services?igsh=NXM5NmZjbW91MDRm'
                 >
-                  Twitter
+                  Instagram
                 </Button>
                 <Button
                   startIcon={<Facebook />}
                   sx={{ color: 'white', borderColor: 'rgba(255,255,255,0.3)' }}
                   variant="outlined"
+                  target='blank'
+                  href='https://www.facebook.com/share/1aE3gBnDhY/'
                 >
                   Facebook
                 </Button>

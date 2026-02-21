@@ -348,7 +348,7 @@ const Home = () => {
             }}
           >
             <Typography
-              variant="h3"
+              variant="h4"
               fontWeight="700"
               gutterBottom
             >

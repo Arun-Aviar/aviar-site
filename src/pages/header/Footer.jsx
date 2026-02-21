@@ -87,7 +87,7 @@ const Footer = () => {
                     <Grid item xs={12} sm={4}>
                         <Typography variant="h6" gutterBottom fontWeight="bold" >Follow us:</Typography>
                         <Box mt={1}>
-                            <IconButton color="inherit" target='blank' href="https://www.facebook.com/share/1aE3gBnDhY/">
+                            <IconButton color="inherit" target='blank' href="https://www.facebook.com/profile.php?id=61588519648092">
                                 <Facebook />
                             </IconButton>
                             {/* <IconButton color="inherit" href="#">

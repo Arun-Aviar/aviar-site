@@ -103,6 +103,7 @@ const WhatWeDo = () => {
         {/* Capability Cards - Mobile Responsive Stack View */}
         <Box sx={{ 
           display: 'flex', 
+          alignItems:'center',
           flexDirection: 'column', 
           gap: { xs: 3, sm: 4 }
         }}>
@@ -114,7 +115,7 @@ const WhatWeDo = () => {
               transition={{ delay: index * 0.1 }}
               elevation={0}
               sx={{
-                width: '100%',
+                width: '95%',
                 p: { xs: 2.5, sm: 3, md: 4 },
                 borderRadius: { xs: 3, sm: 4 },
                 position: 'relative',
